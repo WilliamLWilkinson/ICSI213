@@ -37,6 +37,10 @@ public class Item {
 		return name;
 	}//end of getName()
 	
+	public void setName(String newName){
+		name = newName;
+	}//end of setName(String newName)
+	
 	public int getWeight(){
 		/*
 		 Pre: 
@@ -46,5 +50,14 @@ public class Item {
 		return weight;
 	}// end of getWeight()
 	
+	public void setWeight(int newWeight){
+		weight =newWeight;
+	}
+	
+	public String examin(){
+		String output = name + " has a weight of "+ weight;
+		
+		return output;
+	}// end of examin
 
 }// End of Item class
