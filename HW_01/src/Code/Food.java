@@ -6,8 +6,7 @@ public class Food extends Item {
 	private int quantity;  // quantity of food item
 	
 	public Food(){
-		nutrition = -1;
-		quantity = -1;
+		// Does nothing
 	}
 	
 	public Food(int newNutrition, int newQuantity){
@@ -26,4 +25,14 @@ public class Food extends Item {
 	public void setQuantity(int newQuantity){
 		quantity = newQuantity;
 	}
-}
+	
+	
+	
+	public String examin(){
+		
+		
+		
+		//CHANGE OUTPUT
+		return "";
+	}
+}// end of Food class

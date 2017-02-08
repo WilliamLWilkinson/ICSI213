@@ -5,9 +5,7 @@ public class Weapon extends Item {
 	private int damage;	// Damage of the weapon
 	
 	public Weapon(){
-		this.setName("Weapon");
-		this.setWeight(-1);
-		damage = -1;
+		//does nothing
 	}// end of Weapon()
 	
 	public Weapon(int newDamage, String WeaponName, int newWeight){
