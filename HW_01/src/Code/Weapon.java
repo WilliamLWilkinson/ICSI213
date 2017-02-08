@@ -14,6 +14,7 @@ public class Weapon extends Item {
 		damage = newDamage;
 	}// end of Weapon(int newDamage)
 	
+	// get and set methods for damge
 	public int getDamage(){
 		return damage;
 	}// end of getDamage
@@ -24,7 +25,7 @@ public class Weapon extends Item {
 	
 	public String examin(){
 		/*CHANGE OUTPUT*/
-		String output= this.getName() + " has a weight of " + this.getWeight() + " and a damage of " + this.getDamage();
+		String output= super.examin() + " and has a damage of " + Integer.toString(damage);
 		return output;
 	}// end of examin()
 }// end of Weapons class

@@ -1,7 +1,7 @@
 package Code;
 
+
 public class Item {
-	
 	// Variables 
 	protected String name;	// Name of an item 
 	protected int weight;		// Weight of an item
@@ -34,7 +34,7 @@ public class Item {
 	}
 	
 	public String examin(){
-		String output = name + " has a weight of "+ weight;
+		String output = name + " has a weight of "+ Integer.toString(weight);
 		
 		return output;
 	}// end of examin
