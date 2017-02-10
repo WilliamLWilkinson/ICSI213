@@ -3,6 +3,10 @@ package Code;
 
 public class Driver {
 	public static void main(String[] args) {
+		/*
+		These tests have minimal error handling  
+		*/
+		
 		//Tests item class
 		
 		// Tests weapons class and examine method using Non-default constructor
@@ -22,8 +26,17 @@ public class Driver {
 		System.out.println(spear.examin());
 		
 		//Tests Food class Non-default constructor
+		Food toast = new Food();
+		toast.setName("Toast!");
+		toast.setNutrition(10);
+		toast.setWeight(2);
+		toast.setQuantity(40);
+		toast.setWeight(1);
+		System.out.println(toast.examin());
 		
 		//Tests Food class default constructor
+		Food waffle = new Food(12, 20, 2,"WAFFLES");
+		System.out.println(waffle.examin());
 		
 		//Tests Armor class Non-default constructor
 		Armor helmet = new Armor();

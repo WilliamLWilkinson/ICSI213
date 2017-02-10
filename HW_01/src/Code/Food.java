@@ -37,11 +37,17 @@ public class Food extends Item {
 		quantity = newQuantity;
 	}//end of setQuantity
 	
+	public void calcTotWeight(){
+		
+	}//end of calcTotWeight
+	
+	
 	// Prints the description of the item including name, weight(Including quantity), and nutrition
 	public String examin(){
 		// Can only be called when nutrition, name, weight, and quantity contain values other than garbage and null
-		String output = super.examin();// output get the name and weight
-		output = " , nutritional value of " + Integer.toString(nutrition)+" and you hold a quantity of "+ Integer.toString(quantity) ;
+		//Calculates total weight before printing in case methods were not called int the write order
+		String output =super.examin() + ", nutritional value of " + Integer.toString(nutrition)+" and you hold a quantity of "+
+						Integer.toString(quantity) ;
 		
 		//CHANGE OUTPUT
 		return output;

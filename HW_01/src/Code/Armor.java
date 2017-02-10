@@ -27,8 +27,7 @@ public class Armor extends Item{
 	
 	public String examin(){
 	
-		String output = super.examin();
-		output = " and a defense of "+ Integer.toString(defense);
+		String output =super.examin() + " and a defense of "+ Integer.toString(defense);
 		
 		return output;
 	}// end of examine for armor class
