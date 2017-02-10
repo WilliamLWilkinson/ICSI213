@@ -12,10 +12,9 @@ public class Food extends Item {
 	
 	//Non-default constructor
 	public Food(int newNutrition, int newQuantity, int newWeight, String newName){
-		super.name=  newName;
-		super.weight = newWeight;
+		super.setName(newName);
 		// calculates net weight, quantity * weight
-		super.weight = super.weight * newQuantity;
+		super.setWeight(newWeight*newQuantity);
 		nutrition = newNutrition;
 		quantity = newQuantity;
 	}
@@ -25,8 +24,8 @@ public class Food extends Item {
 		return nutrition;
 	}
 	
-	public void setNutrition(int nutrition){
-		
+	public void setNutrition(int newNutrition){
+		nutrition = newNutrition;
 	}
 	
 	// get and set methods for Quantity 

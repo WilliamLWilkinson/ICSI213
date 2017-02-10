@@ -3,8 +3,8 @@ package Code;
 
 public class Item {
 	// Variables 
-	protected String name;	// Name of an item 
-	protected int weight;		// Weight of an item
+	private String name;	// Name of an item 
+	private int weight;		// Weight of an item
 	
 	// Default constructor 
 	public Item(){

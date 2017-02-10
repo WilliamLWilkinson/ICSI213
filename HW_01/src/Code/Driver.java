@@ -3,14 +3,30 @@ package Code;
 
 public class Driver {
 	public static void main(String[] args) {
-		// Tests weapons class and examine method
+		//Tests item class
+		
+		// Tests weapons class and examine method using Non-default constructor
 		int damage = 2;
 		int weight = 10;
 		Weapon sword = new Weapon(damage,"sword", weight);
 		System.out.println(sword.examin());
 		
-		// Tests food class
+		// Tests Weapon default constructor
+		String weaponName = "Spear";
+		int spearDamage = 5;
+		int spearWeight = 10;
+		Weapon spear = new Weapon();
+		spear.setName(weaponName);
+		spear.setDamage(spearDamage);
+		spear.setWeight(spearWeight);
+		System.out.println(spear.examin());
 		
-		// tests Armor class
+		//Tests Food class Non-default constructor
+		
+		//Tests Food class default constructor
+		
+		//Tests Armor class Non-default constructor
+		
+		//Tests Armor class default constructor
 	}
 }
