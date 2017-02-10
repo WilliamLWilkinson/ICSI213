@@ -34,7 +34,7 @@ public class Item {
 	}
 	
 	public String examin(){
-		String output = name + " has a weight of "+ Integer.toString(weight);
+		String output = name + " has a total weight of "+ Integer.toString(weight);
 		
 		return output;
 	}// end of examin

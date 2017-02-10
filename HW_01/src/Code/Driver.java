@@ -26,7 +26,15 @@ public class Driver {
 		//Tests Food class default constructor
 		
 		//Tests Armor class Non-default constructor
-		
+		Armor helmet = new Armor();
+		helmet.setName("Cool Helmet");
+		helmet.setWeight(10);
+		helmet.setDefense(64);
+		System.out.println(helmet.examin());
 		//Tests Armor class default constructor
-	}
-}
+		Armor tophat = new Armor(0,"Tophat",12);
+		System.out.println(tophat.examin());
+		
+		
+	}// end of main method
+}// end of driver calss
