@@ -6,7 +6,7 @@ import org.junit.Test;
 
 import Code.Item;
 
-
+// Introduction to JUnit tests
 public class ItemTests {
 
 	// Tests setName and getName method
