@@ -11,8 +11,8 @@ public class Armor extends Item{
 	// Non-default constructor 
 	public Armor(int newDefense, String newName, int newWeight){
 		defense = newDefense;
-		super.setName(newName);
-		super.setWeight(newWeight);
+		super.setName(newName); //set the name of the weapon using the super class set method
+		super.setWeight(newWeight); // set the weight of the weapon using the super class set method
 	}// end of Armor non-default constructor
 	
 	//get method 

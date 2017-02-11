@@ -9,12 +9,12 @@ public class Weapon extends Item {
 	}// end of Weapon()
 	
 	public Weapon(int newDamage, String WeaponName, int newWeight){
-		this.setName(WeaponName);
-		this.setWeight(newWeight);
-		damage = newDamage;
+		this.setName(WeaponName); //Set the weapons name using the super class set method
+		this.setWeight(newWeight); //Sets the weapons weight using the super class set method
+		damage = newDamage; //
 	}// end of Weapon(int newDamage)
 	
-	// get and set methods for damge
+	// get and set methods for damage
 	public int getDamage(){
 		return damage;
 	}// end of getDamage
@@ -27,5 +27,5 @@ public class Weapon extends Item {
 		/*CHANGE OUTPUT*/
 		String output= super.examin() + " and has a damage of " + Integer.toString(damage);
 		return output;
-	}// end of examin()
+	}// end of examine()
 }// end of Weapons class

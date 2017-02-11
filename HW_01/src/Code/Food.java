@@ -43,12 +43,6 @@ public class Food extends Item {
 		super.setWeight(totalWeight);// this sets the weight 
 	}//end of calcTotWeight
 	
-	//getWeight method, takes into account the quantity while it's super class method of the 
-	//same name does not
-	public int getWeight(){
-		return super.getWeight();
-	}
-	
 	
 	// Prints the description of the item including name, weight(Including quantity), and nutrition
 	public String examin(){

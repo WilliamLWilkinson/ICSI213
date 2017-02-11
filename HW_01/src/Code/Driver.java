@@ -1,19 +1,17 @@
 package Code;
 
-
 public class Driver {
 	public static void main(String[] args) {
 		/*
 		These tests have minimal error handling  
 		*/
 		
-		//Tests item class
-		
 		// Tests weapons class and examine method using Non-default constructor
 		int damage = 2;
 		int weight = 10;
 		Weapon sword = new Weapon(damage,"sword", weight);
 		System.out.println(sword.examin());
+		System.out.println();
 		
 		// Tests Weapon default constructor
 		String weaponName = "Spear";
@@ -24,6 +22,7 @@ public class Driver {
 		spear.setDamage(spearDamage);
 		spear.setWeight(spearWeight);
 		System.out.println(spear.examin());
+		System.out.println();
 		
 		//Tests Food class Non-default constructor
 		Food toast = new Food();
@@ -31,12 +30,16 @@ public class Driver {
 		toast.setNutrition(10);
 		toast.setWeight(2);
 		toast.setQuantity(40);
-		toast.setWeight(1);
+		//this method has to be called after weight and quantity has been set 
+		//as the getWeight method takes quantity into consideration
+		toast.calcTotWeight();
 		System.out.println(toast.examin());
+		System.out.println();
 		
 		//Tests Food class default constructor
 		Food waffle = new Food(12, 20, 2,"WAFFLES");
 		System.out.println(waffle.examin());
+		System.out.println();
 		
 		//Tests Armor class Non-default constructor
 		Armor helmet = new Armor();
@@ -44,10 +47,12 @@ public class Driver {
 		helmet.setWeight(10);
 		helmet.setDefense(64);
 		System.out.println(helmet.examin());
+		System.out.println();
+		
 		//Tests Armor class default constructor
 		Armor tophat = new Armor(0,"Tophat",12);
 		System.out.println(tophat.examin());
-		
+		System.out.println();
 		
 	}// end of main method
-}// end of driver calss
+}// end of driver class
