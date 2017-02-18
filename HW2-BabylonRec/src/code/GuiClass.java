@@ -22,7 +22,7 @@ public class GuiClass implements Runnable {
 	//JButtons
 	private JButton _calcB;			//JButton which will calculate the 
 	private JButton _resetB;		//JButton that will reset the gui to its beginning state
-	private JButton _quit;			//JButton to quit the GUI
+	private JButton _quitButton;			//JButton to quit the GUI
 	//JLabel
 	private JLabel _directionsSRN; 	//Tells user to enter number to be squared
 	private JLabel _directionsPA;	//Tells user to enter percent accuracy
@@ -42,12 +42,13 @@ public class GuiClass implements Runnable {
 		
 		_buttonPanel = new JPanel();
 		_instrucPanel = new JPanel();
+		_instrucPanel.setLayout(new BoxLayout(_instrucPanel, BoxLayout.Y_AXIS));
 		_container = new JPanel();
-		_container.setLayout(new BoxLayout(_container, BoxLayout.X_AXIS));
+		_container.setLayout(new BoxLayout(_container, BoxLayout.Y_AXIS));
 		
 		_calcB = new JButton("Find Square root");
 		_resetB = new JButton("Reset");
-		_quit = new JButton("Quit");
+		_quitButton = new JButton("Quit");
 		
 		_directionsSRN = new JLabel(_instructionOne);	//Adds instructionsOne to JLabel
 		_directionsPA = new JLabel(_instructionTwo);	//Adds instructionTwo to JLabel
@@ -63,7 +64,7 @@ public class GuiClass implements Runnable {
 		 //Adds button to button panel
 		 _buttonPanel.add(_calcB);
 		 _buttonPanel.add(_resetB);
-		 _buttonPanel.add(_quit);
+		 _buttonPanel.add(_quitButton);
 		 
 		 //Adds labels and textfields 
 		 _instrucPanel.add(_directionsSRN);
@@ -73,9 +74,10 @@ public class GuiClass implements Runnable {
 		 _instrucPanel.add(_resultsLabel);
 		 _instrucPanel.add(_resultsTF );
 		 
-		 
+		 _container.add(_instrucPanel);
+		 _container.add(_buttonPanel);
 		 //Adds panels to JFrame
-		 _rootWindow.add(_instrucPanel);
+		 _rootWindow.add(_container);
 		 //_rootWindow.add(_buttonPanel);
 	}// end of GuiClass()
 	
@@ -86,6 +88,9 @@ public class GuiClass implements Runnable {
 		_rootWindow.setVisible(true);
 		_rootWindow.setFocusable(true);
 		_rootWindow.requestFocus();
+		
+		_quitButton.addActionListener(new QuitGuiHandler());
+		
 		_rootWindow.pack();
 		_rootWindow.setLocationRelativeTo(null);
 		
