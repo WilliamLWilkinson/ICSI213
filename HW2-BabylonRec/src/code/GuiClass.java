@@ -48,6 +48,7 @@ public class GuiClass implements Runnable {
 		
 		_calcB = new JButton("Find Square root");
 		_resetB = new JButton("Reset");
+		_resetB.setEnabled(false);
 		_quitButton = new JButton("Quit");
 		
 		_directionsSRN = new JLabel(_instructionOne);	//Adds instructionsOne to JLabel
@@ -55,36 +56,38 @@ public class GuiClass implements Runnable {
 		_resultsLabel = new JLabel(_resultString);
 		
 		_numSqaure = new TextField();
-		 _percAccuracy = new TextField();
-		 _resultsTF = new TextField();
-		 _resultsTF.setEditable(false);// sets textfiled to false so users can't enter data on their results
+		_numSqaure.requestFocus();
+		_percAccuracy = new TextField();
+		_resultsTF = new TextField();
+		_resultsTF.setEditable(false);// sets textfiled to false so users can't enter data on their results
 		 
-		 _rootWindow.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		_rootWindow.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		 
-		 //Adds button to button panel
-		 _buttonPanel.add(_calcB);
-		 _buttonPanel.add(_resetB);
-		 _buttonPanel.add(_quitButton);
+		//Adds button to button panel
+		_buttonPanel.add(_calcB);
+		_buttonPanel.add(_resetB);
+		_buttonPanel.add(_quitButton);
 		 
-		 //Adds labels and textfields 
-		 _instrucPanel.add(_directionsSRN);
-		 _instrucPanel.add(_numSqaure);
-		 _instrucPanel.add(_directionsPA);
-		 _instrucPanel.add(_percAccuracy);
-		 _instrucPanel.add(_resultsLabel);
-		 _instrucPanel.add(_resultsTF );
+		//Adds labels and textfields 
+		_instrucPanel.add(_directionsSRN);
+		_instrucPanel.add(_numSqaure);
+		_instrucPanel.add(_directionsPA);
+		_instrucPanel.add(_percAccuracy);
+		_instrucPanel.add(_resultsLabel);
+		_instrucPanel.add(_resultsTF );
 		 
-		 _container.add(_instrucPanel);
-		 _container.add(_buttonPanel);
-		 //Adds panels to JFrame
-		 _rootWindow.add(_container);
-		 //_rootWindow.add(_buttonPanel);
+		_container.add(_instrucPanel);
+		_container.add(_buttonPanel);
+		//Adds panels to JFrame
+		_rootWindow.add(_container);
+		//_rootWindow.add(_buttonPanel);
 	}// end of GuiClass()
 	
 	
 	@Override
 	public void run() {
 		// TODO Auto-generated method stub
+		
 		_rootWindow.setVisible(true);
 		_rootWindow.setFocusable(true);
 		_rootWindow.requestFocus();
