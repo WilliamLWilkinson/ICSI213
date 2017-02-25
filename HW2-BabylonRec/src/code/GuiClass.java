@@ -32,11 +32,10 @@ public class GuiClass implements Runnable {
 	private TextField _percAccuracy;//Where the user enters number for percent error
 	private TextField _resultsTF;	//Where the result will be displayed 
 	
-	// GuiClass default constructor
+	//GuiClass default constructor
 	public GuiClass(){
 		_instructionOne = "Please enter the number you wish to find the square rood of:";
 		_instructionTwo = "Please enter the percent accuracy without the percent symbol:";
-		_resultString = "The square root of your number is:";
 		
 		_rootWindow= new JFrame("Babylonian Square Root");	
 		
@@ -53,13 +52,12 @@ public class GuiClass implements Runnable {
 		
 		_directionsSRN = new JLabel(_instructionOne);	//Adds instructionsOne to JLabel
 		_directionsPA = new JLabel(_instructionTwo);	//Adds instructionTwo to JLabel
-		_resultsLabel = new JLabel(_resultString);
+		
 		
 		_numSqaure = new TextField();
-		_numSqaure.requestFocus();
 		_percAccuracy = new TextField();
-		_resultsTF = new TextField();
-		_resultsTF.setEditable(false);// sets textfiled to false so users can't enter data on their results
+		//_resultsTF = new TextField();
+		//_resultsTF.setEditable(false);// sets textfiled to false so users can't enter data on their results
 		 
 		_rootWindow.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		 
@@ -73,8 +71,7 @@ public class GuiClass implements Runnable {
 		_instrucPanel.add(_numSqaure);
 		_instrucPanel.add(_directionsPA);
 		_instrucPanel.add(_percAccuracy);
-		_instrucPanel.add(_resultsLabel);
-		_instrucPanel.add(_resultsTF );
+		
 		 
 		_container.add(_instrucPanel);
 		_container.add(_buttonPanel);
@@ -82,6 +79,50 @@ public class GuiClass implements Runnable {
 		_rootWindow.add(_container);
 		//_rootWindow.add(_buttonPanel);
 	}// end of GuiClass()
+	
+	//Resets the gui to it's default setting  
+	public void resetGui(){
+		_rootWindow.removeAll();
+		
+		/*add Stuff*/
+		_rootWindow.pack();
+		
+	}
+	
+	//Displays the results of the
+	public void displayResults(/*double result*/){
+		_instrucPanel.removeAll();
+		_buttonPanel.removeAll();
+		_container.removeAll();
+		
+		_rootWindow.removeAll();
+		_container.add(_calcB);
+		_rootWindow.add(_container);
+		
+		/*
+		_resultString = "The square root of your number is:";
+		_resultsTF = new TextField();
+		
+		_resultsLabel = new JLabel(_resultString);
+	
+		 _instrucPanel = new JPanel();
+		
+		 _instrucPanel.add(_resultsLabel);
+		 _instrucPanel.add(_resultsTF);
+		
+	
+		_rootWindow.add(_instrucPanel);
+		
+		*/
+		
+		
+		/*add Stuff*/
+		_rootWindow.pack();
+		
+		_rootWindow.setLocationRelativeTo(null);
+		
+	}
+	
 	
 	
 	@Override
@@ -91,6 +132,8 @@ public class GuiClass implements Runnable {
 		_rootWindow.setVisible(true);
 		_rootWindow.setFocusable(true);
 		_rootWindow.requestFocus();
+		
+		_calcB.addActionListener(new CalcButton(this));
 		
 		_quitButton.addActionListener(new QuitGuiHandler());
 		
