@@ -28,8 +28,8 @@ public class GuiClass implements Runnable {
 	private JLabel _directionsPA;	//Tells user to enter percent accuracy
 	private JLabel _resultsLabel;	//Tells the user where the result is displayed 
 	//TextFields
-	private TextField _numSqaure;	//Where the user will enter the number they wish to find the square root of 
-	private TextField _percAccuracy;//Where the user enters number for percent error
+	private TextField _numSqaureTF;	//Where the user will enter the number they wish to find the square root of 
+	private TextField _percAccuracyTF;//Where the user enters number for percent error
 	private TextField _resultsTF;	//Where the result will be displayed 
 	
 	//GuiClass default constructor
@@ -52,12 +52,12 @@ public class GuiClass implements Runnable {
 		
 		_directionsSRN = new JLabel(_instructionOne);	//Adds instructionsOne to JLabel
 		_directionsPA = new JLabel(_instructionTwo);	//Adds instructionTwo to JLabel
+		_resultsLabel = new JLabel("Results: ");
 		
-		
-		_numSqaure = new TextField();
-		_percAccuracy = new TextField();
-		//_resultsTF = new TextField();
-		//_resultsTF.setEditable(false);// sets textfiled to false so users can't enter data on their results
+		_numSqaureTF = new TextField();
+		_percAccuracyTF = new TextField();
+		_resultsTF = new TextField();
+		_resultsTF.setEditable(false);// sets textfiled to false so users can't enter data on their results
 		 
 		_rootWindow.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		 
@@ -68,10 +68,11 @@ public class GuiClass implements Runnable {
 		 
 		//Adds labels and textfields 
 		_instrucPanel.add(_directionsSRN);
-		_instrucPanel.add(_numSqaure);
+		_instrucPanel.add(_numSqaureTF);
 		_instrucPanel.add(_directionsPA);
-		_instrucPanel.add(_percAccuracy);
-		
+		_instrucPanel.add(_percAccuracyTF);
+		_instrucPanel.add(_resultsLabel);
+		_instrucPanel.add(_resultsTF);
 		 
 		_container.add(_instrucPanel);
 		_container.add(_buttonPanel);
@@ -82,48 +83,48 @@ public class GuiClass implements Runnable {
 	
 	//Resets the gui to it's default setting  
 	public void resetGui(){
-		_rootWindow.removeAll();
-		
-		/*add Stuff*/
-		_rootWindow.pack();
+		_numSqaureTF.setText(null);
+		_percAccuracyTF.setText(null);
+		_resultsTF.setText(null);
+		_calcB.setEnabled(true);	//Enables the calculate button
+		_resetB.setEnabled(false);	//disables the reset button
 		
 	}
 	
 	//Displays the results of the
-	public void displayResults(/*double result*/){
-		_instrucPanel.removeAll();
-		_buttonPanel.removeAll();
-		_container.removeAll();
-		
-		_rootWindow.removeAll();
-		_container.add(_calcB);
-		_rootWindow.add(_container);
-		
-		/*
-		_resultString = "The square root of your number is:";
-		_resultsTF = new TextField();
-		
-		_resultsLabel = new JLabel(_resultString);
+	public void displayResults(double result){
 	
-		 _instrucPanel = new JPanel();
 		
-		 _instrucPanel.add(_resultsLabel);
-		 _instrucPanel.add(_resultsTF);
-		
-	
-		_rootWindow.add(_instrucPanel);
-		
-		*/
-		
-		
-		/*add Stuff*/
-		_rootWindow.pack();
-		
-		_rootWindow.setLocationRelativeTo(null);
-		
+		_resultsTF.setText(Double.toString(result));
+		_calcB.setEnabled(false);
+		_resetB.setEnabled(true);
 	}
 	
+	//get and set for _numSqaureTF
+	public void setNumSqaureTF(String numSquareString){
+		_numSqaureTF.setText(numSquareString);
+	}
 	
+	public String getNumSqaureTF(){
+		return _numSqaureTF.getText();
+	}
+	//get and set for _percAccuracyTF
+	public void setPercAccuracyTF(String PercentAccuracy){
+		_percAccuracyTF.setText(PercentAccuracy);
+	}
+	
+	public String getPercAccuracyTF(){
+		return _percAccuracyTF.getText();
+	}
+	
+	//get and set for _resultsTF
+	public void setResultsTF(String results){
+		_resultsTF.setText(results);
+	}
+	
+	public String getReultsTF(){
+		return _resultsTF.getText();
+	}
 	
 	@Override
 	public void run() {
@@ -132,6 +133,8 @@ public class GuiClass implements Runnable {
 		_rootWindow.setVisible(true);
 		_rootWindow.setFocusable(true);
 		_rootWindow.requestFocus();
+		
+		_resetB.addActionListener(new ResetGui(this));
 		
 		_calcB.addActionListener(new CalcButton(this));
 		

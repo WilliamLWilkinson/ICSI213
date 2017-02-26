@@ -18,25 +18,52 @@ public class CalcButton implements ActionListener{
 	@Override
 	public void actionPerformed(ActionEvent arg){
 		
-		_gui.displayResults();
-		/*
-		double squareRootNumber = tryGetNumFromTxt("1");
-		double percentError =tryGetNumFromTxt("1");
+	
+		double results;
 		
 		try{
-			if( isNumPos(squareRootNumber)&&isNumPos( percentError)){
 			
-			}//end of if
+			
+			
+			if(_gui.getNumSqaureTF() == null|| _gui.getNumSqaureTF().isEmpty() ||_gui.getPercAccuracyTF()==null ||_gui.getPercAccuracyTF().isEmpty()){
+				throw new TextFieldExceptions();
+			}
 			else{
-			throw new NegativeNumberException("You must enter an positive value");
+				//Tests to see if the user entered a positive number
+				double squareRootNumber = Double.parseDouble(_gui.getNumSqaureTF());
+				double percentError = Double.parseDouble(_gui.getPercAccuracyTF());
+				
+				if(squareRootNumber <0 ||percentError<0){
+					
+					throw new NegativeNumberException();
+				}
+				else{
+					SquareRoot calculate = new SquareRoot();
+					calculate.setNumPercError(percentError);
+					calculate.setNumSquareRoot(squareRootNumber);
+					results = calculate.calcRoot(calculate.getInitGuess());
+					
+					_gui.displayResults(results);
+				
+				}
+				
+				
 			}
 		}//end of try
 		catch(NegativeNumberException e){
+			_gui.setNumSqaureTF("ENTER A POSITIVE NUMBER!!!");
+			_gui.setPercAccuracyTF("ENTER A POSITIVE NUMBER!!!");
 			
 		}//end of catch
-		*/
+		catch(TextFieldExceptions f){
+			_gui.setNumSqaureTF("ENTER A POSITIVE NUMBER!!!");
+			_gui.setPercAccuracyTF("ENTER A POSITIVE NUMBER!!!");
+		}
+		
+		
 	}//end of actionPerformed
 	
+	/*
 	public double tryGetNumFromTxt(String txtFieldString){
 		double txtNumber;
 		try{
@@ -56,5 +83,6 @@ public class CalcButton implements ActionListener{
 	public boolean isNumPos(double number){
 		return number>=0;
 	}//end of 
-
+	 */
+	
 }//end of CalcButon actionhandler
