@@ -50,7 +50,7 @@ public static void main(String[] args){
 		System.out.println(testThreeCalculatedAnswer);
 		
 		System.out.println();
-		*/
+		
 		//Test four
 		//Test the square root of 100 with a 50% error
 		SquareRoot testFour = new SquareRoot();
@@ -64,7 +64,7 @@ public static void main(String[] args){
 		//Prints out the result
 		System.out.println(testFourCalculatedAnswer);
 		
-
+		*/
 		
 		
 	}//end of 

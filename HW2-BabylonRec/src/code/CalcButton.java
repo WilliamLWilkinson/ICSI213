@@ -1,7 +1,11 @@
 package code;
 
+import java.awt.Component;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+
+import javax.swing.JFrame;
+import javax.swing.JOptionPane;
 
 public class CalcButton implements ActionListener{
 	private GuiClass _gui;
@@ -22,11 +26,11 @@ public class CalcButton implements ActionListener{
 		double results;
 		
 		try{
-			
-			
-			
 			if(_gui.getNumSqaureTF() == null|| _gui.getNumSqaureTF().isEmpty() ||_gui.getPercAccuracyTF()==null ||_gui.getPercAccuracyTF().isEmpty()){
 				throw new TextFieldExceptions();
+			}
+			else if(containsLetters(_gui.getNumSqaureTF())||containsLetters(_gui.getPercAccuracyTF())){
+				throw new LetterException();
 			}
 			else{
 				//Tests to see if the user entered a positive number
@@ -50,39 +54,67 @@ public class CalcButton implements ActionListener{
 				
 			}
 		}//end of try
+		catch(LetterException d){
+			JFrame frame = new JFrame();
+			JOptionPane.showMessageDialog(frame,
+				    "DON'T ENTER A LETTER ONLY NUMBERS!!!",
+				    "TextField Error",
+				    JOptionPane.ERROR_MESSAGE);
+		}
 		catch(NegativeNumberException e){
-			_gui.setNumSqaureTF("ENTER A POSITIVE NUMBER!!!");
-			_gui.setPercAccuracyTF("ENTER A POSITIVE NUMBER!!!");
+			
+			JFrame frame = new JFrame();
+			JOptionPane.showMessageDialog(frame,
+				    "ENTER A POSITIVE NUMBER!!!",
+				    "TextField Error",
+				    JOptionPane.ERROR_MESSAGE);
+			
+			_gui.setNumSqaureTF("");
+			
+			_gui.setPercAccuracyTF("");
+			_gui.setFocusonNumSquareTF();
 			
 		}//end of catch
 		catch(TextFieldExceptions f){
-			_gui.setNumSqaureTF("ENTER A POSITIVE NUMBER!!!");
-			_gui.setPercAccuracyTF("ENTER A POSITIVE NUMBER!!!");
+			JFrame frame = new JFrame();
+			JOptionPane.showMessageDialog(frame,
+				    "YOU LEFT A TEXTFIELD EMPTY",
+				    "TextField Error",
+				    JOptionPane.ERROR_MESSAGE);
+			
+			_gui.setNumSqaureTF("");
+			_gui.setPercAccuracyTF("");
 		}
 		
 		
 	}//end of actionPerformed
 	
-	/*
-	public double tryGetNumFromTxt(String txtFieldString){
-		double txtNumber;
-		try{
-			txtNumber = Double.parseDouble(txtFieldString);
-			throw new TextFieldExceptions("The value you entered was not a double");
-		}
-		catch( TextFieldExceptions e){
-			
-			txtNumber = -1;
+	//Tests to see if the user entered a numerical value containing a number
+	public boolean containsLetters(String string){
+		boolean result = false;
+		
+		//Test to see if the string contains an Upper case letter
+		if(string.contains("A")||string.contains("B")||string.contains("C")||string.contains("D")||string.contains("E")|| string.contains("F")||string.contains("G")||string.contains("H")||string.contains("I")||string.contains("J")||string.contains("K")||string.contains("L")||
+		string.contains("M")||string.contains("N")||string.contains("O")||string.contains("P")||string.contains("Q")||string.contains("R")||string.contains("S")||string.contains("T")||string.contains("U")||string.contains("V")||string.contains("W")||string.contains("X")
+		||string.contains("Y")||string.contains("Z")){
+			result = true;
 		}
 		
-		return txtNumber;
+		//Tests to see if the string contains a lower case letter
+		if(string.contains("a")||string.contains("b")||string.contains("c")||string.contains("d")||string.contains("e")|| string.contains("f")||string.contains("g")||string.contains("h")||string.contains("i")||string.contains("j")||string.contains("k")||string.contains("l")||
+		   string.contains("m")||string.contains("n")||string.contains("0")||string.contains("p")||string.contains("q")||string.contains("r")||string.contains("s")||string.contains("t")||string.contains("u")||string.contains("v")||string.contains("w")||string.contains("x")
+		   ||string.contains("y")||string.contains("z")){
+			result = true;
+		}
 		
-	}//end of tryGetNumFromTxt
-	
-	
-	public boolean isNumPos(double number){
-		return number>=0;
-	}//end of 
-	 */
+		//Tests to see if the user entered some special symbol
+		if(string.contains("!")||string.contains("@")||string.contains("#")||string.contains("$")||string.contains("%")||string.contains("^")||string.contains("&")||string.contains("*")||string.contains("(")||string.contains(")")||string.contains("_")||string.contains("+")
+			||string.contains("=")||string.contains("`")||string.contains("~")||string.contains("[")||string.contains("]")||string.contains("|")||string.contains(";")||string.contains(":")||string.contains("'")||string.contains(",")||string.contains("<")||string.contains(">")
+			||string.contains("?")||string.contains("/")){
+			result = true;
+		}
+		
+		return result;
+	}
 	
 }//end of CalcButon actionhandler

@@ -52,7 +52,7 @@ public class GuiClass implements Runnable {
 		
 		_directionsSRN = new JLabel(_instructionOne);	//Adds instructionsOne to JLabel
 		_directionsPA = new JLabel(_instructionTwo);	//Adds instructionTwo to JLabel
-		_resultsLabel = new JLabel("Results: ");
+		_resultsLabel = new JLabel("The square root of your number is: ");
 		
 		_numSqaureTF = new TextField();
 		_percAccuracyTF = new TextField();
@@ -80,6 +80,11 @@ public class GuiClass implements Runnable {
 		_rootWindow.add(_container);
 		//_rootWindow.add(_buttonPanel);
 	}// end of GuiClass()
+	
+	public void setFocusonNumSquareTF(){
+		_numSqaureTF.requestFocusInWindow();
+		
+	}
 	
 	//Resets the gui to it's default setting  
 	public void resetGui(){
