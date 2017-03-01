@@ -21,32 +21,34 @@ public class CalcButton implements ActionListener{
 	
 	@Override
 	public void actionPerformed(ActionEvent arg){
-		
-	
-		double results;
+		double results;	//The square root of the user entered number
 		
 		try{
+			//If the user left the textfields empty throw textfield exception
 			if(_gui.getNumSqaureTF() == null|| _gui.getNumSqaureTF().isEmpty() ||_gui.getPercAccuracyTF()==null ||_gui.getPercAccuracyTF().isEmpty()){
 				throw new TextFieldExceptions();
-			}
+			}//end of if
+			//if the user entered a letter some where in the textfields
 			else if(containsLetters(_gui.getNumSqaureTF())||containsLetters(_gui.getPercAccuracyTF())){
 				throw new LetterException();
-			}
+			}//end of if else
 			else{
 				//Tests to see if the user entered a positive number
 				double squareRootNumber = Double.parseDouble(_gui.getNumSqaureTF());
 				double percentError = Double.parseDouble(_gui.getPercAccuracyTF());
 				
+				//if the number the user entered was negative throw exception
 				if(squareRootNumber <0 ||percentError<0){
 					
 					throw new NegativeNumberException();
 				}
 				else{
+					//Calculates the square root
 					SquareRoot calculate = new SquareRoot();
 					calculate.setNumPercError(percentError);
 					calculate.setNumSquareRoot(squareRootNumber);
 					results = calculate.calcRoot(calculate.getInitGuess());
-					
+					//Displays the results in the result text field
 					_gui.displayResults(results);
 				
 				}
@@ -55,6 +57,7 @@ public class CalcButton implements ActionListener{
 			}
 		}//end of try
 		catch(LetterException d){
+			//Creates an error pop up window
 			JFrame frame = new JFrame();
 			JOptionPane.showMessageDialog(frame,
 				    "DON'T ENTER A LETTER ONLY NUMBERS!!!",
@@ -62,7 +65,7 @@ public class CalcButton implements ActionListener{
 				    JOptionPane.ERROR_MESSAGE);
 		}
 		catch(NegativeNumberException e){
-			
+			//Creates an error pop up window
 			JFrame frame = new JFrame();
 			JOptionPane.showMessageDialog(frame,
 				    "ENTER A POSITIVE NUMBER!!!",
@@ -76,6 +79,7 @@ public class CalcButton implements ActionListener{
 			
 		}//end of catch
 		catch(TextFieldExceptions f){
+			//Creates an error pop up window
 			JFrame frame = new JFrame();
 			JOptionPane.showMessageDialog(frame,
 				    "YOU LEFT A TEXTFIELD EMPTY",
@@ -102,7 +106,7 @@ public class CalcButton implements ActionListener{
 		
 		//Tests to see if the string contains a lower case letter
 		if(string.contains("a")||string.contains("b")||string.contains("c")||string.contains("d")||string.contains("e")|| string.contains("f")||string.contains("g")||string.contains("h")||string.contains("i")||string.contains("j")||string.contains("k")||string.contains("l")||
-		   string.contains("m")||string.contains("n")||string.contains("0")||string.contains("p")||string.contains("q")||string.contains("r")||string.contains("s")||string.contains("t")||string.contains("u")||string.contains("v")||string.contains("w")||string.contains("x")
+		   string.contains("m")||string.contains("n")||string.contains("o")||string.contains("p")||string.contains("q")||string.contains("r")||string.contains("s")||string.contains("t")||string.contains("u")||string.contains("v")||string.contains("w")||string.contains("x")
 		   ||string.contains("y")||string.contains("z")){
 			result = true;
 		}

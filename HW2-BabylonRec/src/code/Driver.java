@@ -7,7 +7,7 @@ public static void main(String[] args){
 		
 		SwingUtilities.invokeLater( new GuiClass());
 	
-	/*
+	
 		//Test one
 		//Test the square root of 9 with a 00% error
 		SquareRoot test = new SquareRoot();
@@ -64,7 +64,7 @@ public static void main(String[] args){
 		//Prints out the result
 		System.out.println(testFourCalculatedAnswer);
 		
-		*/
+		
 		
 		
 	}//end of 
