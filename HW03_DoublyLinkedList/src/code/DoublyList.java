@@ -19,5 +19,10 @@ public class DoublyList {
 		_size = 1;
 	}
 
+	//get for list size
+	public int getSize(){return _size;}
+	
+	//Adds get and sets for head node
+	
 	
 }
