@@ -23,6 +23,9 @@ public class DoublyList {
 	public int getSize(){return _size;}
 	
 	//Adds get and sets for head node
+	public void setHead(Node newHead){_head = newHead;}
+	
+	public Node getHead(){return _head;}
 	
 	
 }
