@@ -17,8 +17,16 @@ public class Node {
 		_data = newData;
 	}
 	
+	//Gets and sets for next node
+	public void setNext(){
+		
+	}
 	
+	//Gets and sets for previous node
 	
+	//Gets and sets for data
+	public void setData(String newData){_data = newData;}
 	
+	public String getDate(){return _data;}
 
 }
