@@ -18,11 +18,11 @@ public class Node {
 	}
 	
 	//Gets and sets for next node
-	public void setNext(){
-		
-	}
+	public void setNext(Node newNode){_next = newNode;}
 	
+	public Node getNext(){return _next;}
 	//Gets and sets for previous node
+	
 	
 	//Gets and sets for data
 	public void setData(String newData){_data = newData;}
