@@ -27,5 +27,18 @@ public class DoublyList {
 	
 	public Node getHead(){return _head;}
 	
-	
+	//Method to insert node
+	public void insertNode(Node newNode){
+		Node l =_tail;
+		_tail = newNode;
+		if(_head ==null && _tail ==null){
+			_head=newNode;
+			
+		}
+		else{
+			//Adds to the end of the list if the list is empty
+			l.setNext(newNode);
+		}
+		_size++;
+	}//end of insertNode
 }
