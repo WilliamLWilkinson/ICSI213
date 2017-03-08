@@ -28,17 +28,12 @@ public class DoublyList {
 	public Node getHead(){return _head;}
 	
 	//Method to insert node
-	public void insertNode(Node newNode){
-		Node l =_tail;
-		_tail = newNode;
-		if(_head ==null && _tail ==null){
-			_head=newNode;
-			
-		}
-		else{
-			//Adds to the end of the list if the list is empty
-			l.setNext(newNode);
-		}
-		_size++;
+	public void insertNodeAlphabetically(Node newNode){
+		
 	}//end of insertNode
+	
+	//Method isEmpty returns true if the list is empty
+	public boolean isEmpty(){
+		return _size==0;
+	}
 }
