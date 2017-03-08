@@ -22,13 +22,10 @@ public class DoublyList {
 	//get for list size
 	public int getSize(){return _size;}
 	
-	//Adds get and sets for head node
-	public void setHead(Node newHead){_head = newHead;}
-	
 	public Node getHead(){return _head;}
 	
 	//Method to insert node
-	public void insertNodeAlphabetically(Node newNode){
+	public void insertNodeAlphabetically(String s){
 		
 	}//end of insertNode
 	
@@ -54,4 +51,12 @@ public class DoublyList {
 			temp = temp.getPrev();
 		}
 	}// end of print backwards
+	
+	//Deletes the list
+	public void deleteList(){
+		//Sets everthing to its initial value
+		_head =null;
+		_tail = null;
+		_size=0;
+	}//end of deleteList()
 }
