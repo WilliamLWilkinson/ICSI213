@@ -25,7 +25,7 @@ public class Node {
 	//Gets and sets for previous node
 	public void setPrev(Node newNode){_prev=newNode;}
 	
-	public Node setPrev(){return _prev;}
+	public Node getPrev(){return _prev;}
 	
 	//Gets and sets for data
 	public void setData(String newData){_data = newData;}

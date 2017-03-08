@@ -35,5 +35,23 @@ public class DoublyList {
 	//Method isEmpty returns true if the list is empty
 	public boolean isEmpty(){
 		return _size==0;
-	}
+	}//end of isEmpty()
+	
+	//Prints the list start from the head
+	public void printForward(){
+		Node temp =_head;
+		while(temp!=null){
+			System.out.println(temp.getDate());
+			temp = temp.getNext();
+		}
+	}//end of print forward
+	
+	//Prints the list starting from the back
+	public void printBackwards(){
+		Node temp = _tail;
+		while(temp!=null){
+			System.out.println(temp.getDate());
+			temp = temp.getPrev();
+		}
+	}// end of print backwards
 }
