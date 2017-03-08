@@ -26,6 +26,13 @@ public class DoublyList {
 	
 	//Method to insert node
 	public void insertNodeAlphabetically(String s){
+		Node newNode = new Node(s);
+		
+		if(isEmpty()){
+			_head = newNode;
+			_tail =newNode;
+			_size++;
+		}
 		
 	}//end of insertNode
 	
@@ -36,18 +43,25 @@ public class DoublyList {
 	
 	//Prints the list start from the head
 	public void printForward(){
+		//sets temp to head
 		Node temp =_head;
+		//While temp is not null
 		while(temp!=null){
+			//Print
 			System.out.println(temp.getDate());
+			//Get next node
 			temp = temp.getNext();
 		}
 	}//end of print forward
 	
 	//Prints the list starting from the back
 	public void printBackwards(){
+		//Sets temp to _tail
 		Node temp = _tail;
+		//While temp is not null
 		while(temp!=null){
 			System.out.println(temp.getDate());
+			//Gets previous node
 			temp = temp.getPrev();
 		}
 	}// end of print backwards

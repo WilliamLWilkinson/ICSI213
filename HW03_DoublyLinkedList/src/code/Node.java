@@ -11,10 +11,19 @@ public class Node {
 		_prev = null;
 		_next = null;
 	}
+	/*
+	public Node(Node newPrev, String newString, Node newNext){
+		_prev = newPrev;
+		_data = newString;
+		_next = newNext;
+	}
+	*/
 	
 	//Non-Default constructor
 	public Node(String newData){
 		_data = newData;
+		_prev = null;
+		_next = null;
 	}
 	
 	//Gets and sets for next node
