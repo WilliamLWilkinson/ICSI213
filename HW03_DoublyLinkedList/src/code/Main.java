@@ -16,7 +16,7 @@ public class Main {
 		 	//Tests printforward
 		 	listOne.printForward();//Works so far
 		 	//Tests printBackward
-		 	
+		 	listOne.printBackwards();
 		 	
 		 	
 		}// end of main
