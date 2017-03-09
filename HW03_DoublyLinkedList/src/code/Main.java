@@ -17,6 +17,25 @@ public class Main {
 		 	listOne.printForward();//Works so far
 		 	//Tests printBackward
 		 	listOne.printBackwards();
+		 	//Tests find method
+		 	String strOne = "Billy"; //should be found
+		 	String strTwo = "Bobby"; //Shouldn't be found
+		 	//BROKEN
+		 	//Should be found, should print out statement in if 
+		 	if(listOne.findNode(strOne)==true){
+		 		System.out.println("The string was found");
+		 	}
+		 	else{
+		 		System.out.println("The string was not found");
+		 	}
+		 	//Shouldn't be found, so it should go to else
+		 	if(listOne.findNode(strTwo)==true){
+		 		System.out.println("The string was found");
+		 	}
+		 	else{
+		 		System.out.println("The string was not found");
+		 	}
+		 	
 		 	
 		 	
 		}// end of main

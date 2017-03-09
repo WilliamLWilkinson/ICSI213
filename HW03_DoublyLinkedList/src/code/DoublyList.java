@@ -84,24 +84,20 @@ public class DoublyList {
 	
 	//Traverses the list and tells the user if the input string was found
 	//and at which location
-	public void findNode(String target){
+	public boolean findNode(String target){
 		Node temp = _head;
-		int location =0;
-		//While there are 
-		while(location <_size){
+		//While not at the end of the list
+		while(temp!=null){
+			//If the item was found return true
 			if(temp.getDate().compareTo(target)==0){
-				System.out.println("String: " + target + "was found in the: "+ (location +1) + "index");
-				location = _size;//Breaks the loop
+			return true;
 			}
-			//The item was not found
-			else if(location == _size){
-				System.out.println("String: " + target + "was not found");
-			}
-			//The string was not found but location is smaller than size
 			else{
-				location++;
+				//The string was not found yet
 				temp = temp.getNext();
 			}
 		}//end of while
+		//At this point the string was not found so it returns false
+		return false;
 	}//end of find node
 }
