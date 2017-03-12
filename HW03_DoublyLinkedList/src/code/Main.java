@@ -2,6 +2,7 @@ package code;
 
 public class Main {
 	 public static void main(String[] args) {
+		 	/*
 			//Test doubly list class constructor
 		 	DoublyList listOne = new DoublyList();	// didn't crash good
 		 	//Tests isEmpty
@@ -20,7 +21,6 @@ public class Main {
 		 	//Tests find method
 		 	String strOne = "Billy"; //should be found
 		 	String strTwo = "Bobby"; //Shouldn't be found
-		 	//BROKEN
 		 	//Should be found, should print out statement in if 
 		 	if(listOne.findNode(strOne)==true){
 		 		System.out.println("The string was found");
@@ -35,7 +35,25 @@ public class Main {
 		 	else{
 		 		System.out.println("The string was not found");
 		 	}
-		 	
+		 	/*
+		 	 Terminal so far:
+		 	 	The list is empty			//isEmpty method
+				Billy						//printForward method
+				Billy						//printBackwards method
+				The string was found		//findNode method(found)
+				The string was not found	//findNode method(not found)
+		 	 
+		 	 */
+		 	//Tests add method
+		 	DoublyList listTwo = new DoublyList();
+		 	listTwo.insertNodeAlphabetically("Billy");
+		 	//listTwo.insertNodeAlphabetically("Bobby");
+		 	listTwo.insertNodeAlphabetically("Aaron");
+		 	//listTwo.insertNodeAlphabetically("Tim");
+		 	listTwo.printForward();
+		 	System.out.println();
+		 	listTwo.printBackwards();
+		 	System.out.println(listTwo.getSize());
 		 	
 		 	
 		}// end of main

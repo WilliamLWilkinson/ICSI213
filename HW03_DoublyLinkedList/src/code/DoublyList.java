@@ -27,20 +27,22 @@ public class DoublyList {
 	//Method to insert node
 	public void insertNodeAlphabetically(String s){
 		Node newNode = new Node(s);
-		
+		//Points to the current node
+		Node currPoint=_head;
+		Node prevPoint=_tail;
+		int pos =_size;
 		//If the list is empty set the tail and head to the argument string 
 		if(isEmpty()){
 			_head = newNode;
 			_tail =newNode;
-			_size++;
 		}//end of if
 		//Else if the list is not empty
 		else{
-			Node temp = _head;
-			while(temp !=null){
-				
-			}//end of while
+			for(int i=0;i<_size;i++){
+				if()
+			}
 		}//end of else
+		_size++;
 		
 	}//end of insertNode
 	
