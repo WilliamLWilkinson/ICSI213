@@ -50,6 +50,9 @@ public class Main {
 		 	listTwo.insertNodeAlphabetically("Bobby");
 		 	listTwo.insertNodeAlphabetically("Aaron");
 		 	listTwo.insertNodeAlphabetically("Tim");
+		 	listTwo.insertNodeAlphabetically("Zebra");
+		 	listTwo.insertNodeAlphabetically("Apple");
+		 	listTwo.insertNodeAlphabetically("Taco");
 		 	listTwo.printForward();
 		 	System.out.println();
 		 	listTwo.printBackwards();

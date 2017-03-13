@@ -128,4 +128,14 @@ public class DoublyList {
 		//At this point the string was not found so it returns false
 		return false;
 	}//end of find node
+
+	
+	
+	public boolean deleteNode(String s){
+		
+		for(int i=0;i<_size;i++){
+			
+		}
+	
+	}//end of 
 }
