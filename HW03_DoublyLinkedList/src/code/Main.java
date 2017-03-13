@@ -47,9 +47,9 @@ public class Main {
 		 	//Tests add method
 		 	DoublyList listTwo = new DoublyList();
 		 	listTwo.insertNodeAlphabetically("Billy");
-		 	//listTwo.insertNodeAlphabetically("Bobby");
+		 	listTwo.insertNodeAlphabetically("Bobby");
 		 	listTwo.insertNodeAlphabetically("Aaron");
-		 	//listTwo.insertNodeAlphabetically("Tim");
+		 	listTwo.insertNodeAlphabetically("Tim");
 		 	listTwo.printForward();
 		 	System.out.println();
 		 	listTwo.printBackwards();

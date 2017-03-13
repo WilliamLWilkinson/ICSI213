@@ -30,7 +30,7 @@ public class DoublyList {
 		//Points to the current node
 		Node currPoint=_head;
 		Node prevPoint=_tail;
-		int pos =_size;
+		//int pos =_size;
 		//If the list is empty set the tail and head to the argument string 
 		if(isEmpty()){
 			_head = newNode;
@@ -39,11 +39,37 @@ public class DoublyList {
 		//Else if the list is not empty
 		else{
 			for(int i=0;i<_size;i++){
-				if()
-			}
+			
+				if(currPoint.getPrev()==null&&currPoint.getData().compareTo(s)>0){
+					newNode.setNext(currPoint);
+					currPoint.setPrev(newNode);
+					_head = newNode;
+					//Condition to exit the loop
+					i=_size;
+				}//end of if
+				else if(currPoint.getData().compareTo(s)>0){
+					newNode.setNext(currPoint);
+					newNode.setPrev(prevPoint);
+					prevPoint.setNext(newNode);
+					currPoint.setPrev(newNode);
+					//Condition to exit the loop
+					i=_size;
+				}//end of if else
+				else if(currPoint.getNext()==null&&currPoint.getData().compareTo(s)<0){
+					currPoint.setNext(newNode);
+					newNode.setPrev(currPoint);
+					_tail = newNode;
+					//Condition to exit the loop
+					i=_size;
+				}//end of if else
+				else{
+				prevPoint = currPoint;
+				currPoint = currPoint.getNext();
+				}//end of else
+				
+			}//end of for
 		}//end of else
 		_size++;
-		
 	}//end of insertNode
 	
 	//Method isEmpty returns true if the list is empty
@@ -58,7 +84,7 @@ public class DoublyList {
 		//While temp is not null
 		while(temp!=null){
 			//Print
-			System.out.println(temp.getDate());
+			System.out.println(temp.getData());
 			//Get next node
 			temp = temp.getNext();
 		}//end of while
@@ -70,7 +96,7 @@ public class DoublyList {
 		Node temp = _tail;
 		//While temp is not null
 		while(temp!=null){
-			System.out.println(temp.getDate());
+			System.out.println(temp.getData());
 			//Gets previous node
 			temp = temp.getPrev();
 		}//end of while
@@ -91,7 +117,7 @@ public class DoublyList {
 		//While not at the end of the list
 		while(temp!=null){
 			//If the item was found return true
-			if(temp.getDate().compareTo(target)==0){
+			if(temp.getData().compareTo(target)==0){
 			return true;
 			}
 			else{

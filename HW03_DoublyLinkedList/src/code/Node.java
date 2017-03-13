@@ -39,6 +39,6 @@ public class Node {
 	//Gets and sets for data
 	public void setData(String newData){_data = newData;}
 	
-	public String getDate(){return _data;}
+	public String getData(){return _data;}
 
 }
