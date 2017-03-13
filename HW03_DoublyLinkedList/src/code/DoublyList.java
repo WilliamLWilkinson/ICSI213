@@ -29,7 +29,7 @@ public class DoublyList {
 		Node newNode = new Node(s);
 		//Points to the current node
 		Node currPoint=_head;
-		Node prevPoint=_tail;
+		Node prevPoint=_head;
 		//int pos =_size;
 		//If the list is empty set the tail and head to the argument string 
 		if(isEmpty()){
@@ -132,10 +132,39 @@ public class DoublyList {
 	
 	
 	public boolean deleteNode(String s){
-		
+		Node currPoint=_head;
+		Node prevPoint=_head;
 		for(int i=0;i<_size;i++){
-			
+			if(currPoint.getData().compareTo(s)==0){
+				//If you're deleting the head
+				if(currPoint.getPrev()==null){
+					_head = currPoint.getNext();
+					currPoint.getNext().setPrev(null);
+					
+					
+				}
+				//if you're deleting the tail
+				else if(currPoint.getNext()==null){
+					_tail = prevPoint;
+					prevPoint.setNext(null);
+				}
+				else{
+				Node temp = currPoint.getNext();
+				prevPoint.setNext(temp);
+				temp.setPrev(prevPoint);
+				currPoint.setNext(null);
+				currPoint.setPrev(null);
+				}
+				_size--;
+				//Returns true if the item was deleted
+				i=_size;
+			}
+			else{
+				prevPoint = currPoint;
+				currPoint = currPoint.getNext();
+			}
 		}
-	
+		//Returns false if the item wasn't in the list, can't be deleted 
+		return false;
 	}//end of 
 }

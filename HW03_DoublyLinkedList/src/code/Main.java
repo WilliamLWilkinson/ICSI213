@@ -53,11 +53,37 @@ public class Main {
 		 	listTwo.insertNodeAlphabetically("Zebra");
 		 	listTwo.insertNodeAlphabetically("Apple");
 		 	listTwo.insertNodeAlphabetically("Taco");
+		 	//listTwo.printForward();
+		 	//System.out.println();
+		 	//listTwo.printBackwards();
+		 	//System.out.println();
+		 	//System.out.println(listTwo.getSize());
+		 	//System.out.println();
+		 	
+		 	//Tests delete
+		 	listTwo.deleteNode("Taco");
+		 	//listTwo.printForward();
+		 	//System.out.println();
+		 	//listTwo.printBackwards();
+		 	//Tests delete
+		 	listTwo.deleteNode("Aaron");
+		 	//listTwo.printForward();
+		 	//System.out.println(listTwo.getSize());
+		 	//System.out.println();
+		 	//listTwo.printBackwards();
+		 	//System.out.println(listTwo.getSize());
+		 	listTwo.deleteNode("Zebra");
+		 	//listTwo.printForward();
+		 	//System.out.println(listTwo.getSize());
+		 	//System.out.println();
+		 	//listTwo.printBackwards();
+		 	//System.out.println(listTwo.getSize());
+		 	listTwo.deleteList();
 		 	listTwo.printForward();
+		 	System.out.println(listTwo.getSize());
 		 	System.out.println();
 		 	listTwo.printBackwards();
 		 	System.out.println(listTwo.getSize());
-		 	
 		 	
 		}// end of main
 }// end of main class
