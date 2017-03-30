@@ -69,7 +69,7 @@ public class LinkedList<E> {
 		_size++;
 	}//end of addToBack
 	
-	public Node<E> removeFromFront(){
+	public E removeFromFront(){
 		Node<E> removed = _head;
 		if(_size ==0){
 			System.out.println("You can't remove from an empty list!!!!");
@@ -79,10 +79,10 @@ public class LinkedList<E> {
 			_head = _head.next;
 			_head.prev = null;
 		}
-		return removed;
+		return removed.item;
 	}//end of removeFromFront 
 	
-	public Node<E> removeFromEnd(){
+	public E removeFromEnd(){
 		Node<E> removed = _tail;
 		if(_size ==0){
 			System.out.println("You can't remove from an empty list!!!!");
@@ -92,7 +92,7 @@ public class LinkedList<E> {
 			_tail = _tail.prev;
 			_head.next = null;
 		}
-		return removed;
+		return removed.item;
 	}
 	
 	public void print(){
