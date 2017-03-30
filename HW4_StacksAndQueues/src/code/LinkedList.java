@@ -86,7 +86,7 @@ public class LinkedList<E> {
 		Node<E> removed = _tail;
 		if(_size ==0){
 			System.out.println("You can't remove from an empty list!!!!");
-			return null;
+			
 		}
 		else{
 			_tail = _tail.prev;
