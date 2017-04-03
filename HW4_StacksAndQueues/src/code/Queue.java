@@ -3,7 +3,7 @@ package code;
 
 
 public class Queue<E> {
-	private LinkedList list;
+	private LinkedList<E> list;
 	
 	//Default constructor
 	public Queue(){
@@ -14,6 +14,8 @@ public class Queue<E> {
 		list.addToBack(e);
 	}
 	
-	
+	public E dequeue(){
+		return list.removeFromFront(); 
+	}
 	
 }//End of Queue
