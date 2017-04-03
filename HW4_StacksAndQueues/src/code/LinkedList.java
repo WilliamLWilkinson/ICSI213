@@ -24,6 +24,14 @@ public class LinkedList<E> {
 		_size = 0;
 	}
 	
+	public E getHead(){
+		return _head.item;
+	}
+	
+	public E getTail(){
+		return _tail.item;
+	}
+	
 	//Returns the size of the list
 	public int getSize(){
 		return _size;
