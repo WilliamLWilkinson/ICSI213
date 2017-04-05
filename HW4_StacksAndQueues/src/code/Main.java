@@ -3,7 +3,7 @@ package code;
 public class Main {
 
 	 public static void main(String[] args) {	
-		 				
+		/*		
 		Queue qOne = new Queue();
 		qOne.enqueue(1);
 		qOne.enqueue(2);
@@ -23,6 +23,24 @@ public class Main {
 		sOne.print();
 		System.out.println();
 		System.out.println(sOne.pop());
+		System.out.println();
+		sOne.print();
+		*/
 		
+		 //Tests linked list class
+		LinkedList lOne = new LinkedList();
+		
+		lOne.addToBack(1);
+		lOne.addToBack(2);
+		lOne.addToBack(3);
+		lOne.addToBack(4);
+		lOne.addToBack(5);
+		//lOne.print();
+		lOne.addToFront(0);
+		lOne.addToFront(-1);
+		lOne.addToFront(-2);
+		//lOne.print();
+		 
+		 
 	 }
 }
