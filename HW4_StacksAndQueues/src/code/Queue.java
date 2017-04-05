@@ -18,4 +18,12 @@ public class Queue<E> {
 		return list.removeFromFront(); 
 	}
 	
+	public E peek(){
+		return list.getHead();
+	}
+	
+	public void print(){
+		list.print();
+	}
+	
 }//End of Queue

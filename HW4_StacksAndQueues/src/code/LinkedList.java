@@ -110,6 +110,5 @@ public class LinkedList<E> {
 			System.out.println(temp.item);
 			temp = temp.next;
 		}
-		
 	}//end of print
 }
