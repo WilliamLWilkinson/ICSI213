@@ -63,6 +63,8 @@ public class Main {
 		 stackOne.push(3);
 		 stackOne.push(2);
 		 stackOne.push(1);
+		 Stack stackTwo = new Stack();
+		 
 		 
 		 //Stack to Queue
 		 
