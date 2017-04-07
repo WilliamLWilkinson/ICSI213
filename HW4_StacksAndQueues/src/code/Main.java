@@ -51,11 +51,11 @@ public class Main {
 		 
 		 //Queue to stack
 		 Stack sTwo = new Stack();
-		 System.out.println("Queue Start:");
-		 qOne.print();
-		 queueToStack(qOne,sTwo);
-		 System.out.println("Copied stack:");
-		 sTwo.print();
+		 //System.out.println("Queue Start:");
+		 //qOne.print();
+		 //queueToStack(qOne,sTwo);
+		 //System.out.println("Copied stack:");
+		 //sTwo.print();
 		 //Stack to stack
 		 Stack stackOne = new Stack();
 		 stackOne.push(5);
@@ -65,8 +65,10 @@ public class Main {
 		 stackOne.push(1);
 		 Stack stackTwo = new Stack();
 		 
-		 
+		 stackToStack(stackOne, stackTwo);
+		 //stackTwo.print();
 		 //Stack to Queue
+		 
 		 
 	 }//end of main method
 	 
