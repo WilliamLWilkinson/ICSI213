@@ -18,11 +18,20 @@ public class Stack<E> {
 	}//end of pop
 	
 	public E peek(){
-		return list.getTail();
+		
+		if(list.getHead()==null){
+			System.out.println("The Stack is empty!!!!");
+			return null;
+		}
+		return list.getHead();
 	}
 	
 	public void print(){
 		list.print();
+	}
+	
+	public boolean isEmpty(){
+		return list.isEmpty();
 	}
 	
 }//End of Stack

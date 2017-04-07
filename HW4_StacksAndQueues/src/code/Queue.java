@@ -19,11 +19,19 @@ public class Queue<E> {
 	}
 	
 	public E peek(){
+		if(list.getHead()==null){
+			System.out.println("The Queue is empty!!!!");
+			return null;
+		}
 		return list.getHead();
 	}
 	
 	public void print(){
 		list.print();
+	}
+	
+	public boolean isEmpty(){
+		return list.isEmpty();
 	}
 	
 }//End of Queue

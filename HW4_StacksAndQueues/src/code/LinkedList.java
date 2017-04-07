@@ -25,10 +25,18 @@ public class LinkedList<E> {
 	}
 	
 	public E getHead(){
+		if(_head==null){
+			
+			return null;
+		}
 		return _head.item;
 	}
 	
 	public E getTail(){
+		if(_tail==null){
+			
+			return null;
+		}
 		return _tail.item;
 	}
 	
@@ -85,30 +93,38 @@ public class LinkedList<E> {
 		}
 		else{
 			_head = _head.next;
-			_head.prev = null;
+			
+			_size--;
 		}
+		
 		return removed.item;
 	}//end of removeFromFront 
 	
 	public E removeFromEnd(){
-		Node<E> removed = _tail;
+		E removed = _tail.item;
 		if(_size ==0){
 			System.out.println("You can't remove from an empty list!!!!");
+			return null;
 			
 		}
 		else{
 			_tail = _tail.prev;
-			_head.next = null;
+			_tail.next = null;
+			_size--;
 		}
-		return removed.item;
+		return removed;
 	}
 	
 	public void print(){
 		Node<E> temp = _head;
-		
-		for(int i =0; i<_size;i++){
-			System.out.println(temp.item);
-			temp = temp.next;
+		if(_size==0){
+			System.out.println("The container is empty!");
+		}
+		else{
+			while(temp !=null){
+				System.out.println(temp.item);
+				temp = temp.next;
+			}
 		}
 	}//end of print
 }
