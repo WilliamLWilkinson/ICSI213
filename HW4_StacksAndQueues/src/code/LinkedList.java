@@ -112,8 +112,7 @@ public class LinkedList<E> {
 		else{
 			//resets the head to the next node
 			_head = _head.next;
-			//sets the previous node to null
-			_head.prev =null;
+			
 			//decreases size of the list
 			_size--;
 		}
