@@ -1,5 +1,7 @@
 package code;
 
+import java.util.Random;
+
 public class Main {
 	public static void main(String[] args) {	
 		int _sizeOfList = 10;
@@ -13,7 +15,10 @@ public class Main {
 	public static void fillArray(int a[]){
 		
 		for(int i =0;i<a.length;i++){
+			Random rand = new Random();
 			
+			int ranNum = rand.nextInt(0-100 +1)+0;
+			a[i]= ranNum;
 		}
 	}
 }//end of main class
