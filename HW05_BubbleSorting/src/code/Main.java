@@ -20,5 +20,11 @@ public class Main {
 			int ranNum = rand.nextInt(0-100 +1)+0;
 			a[i]= ranNum;
 		}
+	}//end of fillArray
+	
+	public static void printArrray(int a[]){
+		for(int i=0;i<a.length;i++){
+			System.out.println(Integer.toString(a[i]));
+		}
 	}
 }//end of main class
