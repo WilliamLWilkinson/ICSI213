@@ -6,6 +6,7 @@ public class Main {
 	static int  _sizeOfList = 10;
 	public static void main(String[] args) {	
 		
+		/*
 		int[] arrayOne = new int[_sizeOfList];
 		//int[] arrayOne = {12,7,9,18};
 		fillArray(arrayOne);
@@ -14,14 +15,15 @@ public class Main {
 		bubbleSortArray(arrayOne);
 		System.out.println("Post Sort");
 		printArray(arrayOne);
-		
+		*/
 		//Sorting with a linked list
 		LinkedList listOne = new LinkedList();
 		fillListWithRandomNum(listOne);
 		System.out.println("Linked List UnSorted:");
 		listOne.print();
-		
+	
 	}//end of main method
+	
 	
 	//Fills a linked list with 10 nodes with random numbers
 	public static void fillListWithRandomNum(LinkedList list){
@@ -33,6 +35,7 @@ public class Main {
 			//Creates a random number between 0 and 100
 			int ranNum = rand.nextInt(100-0)+0;
 			list.addToBack(ranNum);
+			iterations = iterations+1;
 		}
 	}
 	

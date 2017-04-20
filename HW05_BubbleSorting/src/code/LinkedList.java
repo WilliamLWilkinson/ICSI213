@@ -3,8 +3,11 @@ package code;
 
 
 public class LinkedList<E> {
+
+	private Node<E> _head;	//Node at the start of the linked list
+	private Node<E> _tail;	//Node at the end of the linked list
+	private int _size;		// Number of nodes in the list
 	
-	//Node class
 	private static class Node<E> {
 		public E item;
 		public Node<E> prev;	//Points to a node preceding 
@@ -18,9 +21,6 @@ public class LinkedList<E> {
 		}
 	}//end of node class
 
-	private Node<E> _head;	//Node at the start of the linked list
-	private Node<E> _tail;	//Node at the end of the linked list
-	private int _size;		// Number of nodes in the list
 	
 	//Constructor for the doubly linked list class
 	public LinkedList(){
@@ -97,5 +97,10 @@ public class LinkedList<E> {
 			}
 		}
 	}//end of print
-}
+	
+	public void bubbleSortList(){
+		
+	}
+	
+}// end of LinkedList class
 
