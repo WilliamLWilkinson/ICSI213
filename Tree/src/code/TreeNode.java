@@ -26,6 +26,18 @@ public class TreeNode {
 	
 	public void setLeftNode(TreeNode lN){
 		_leftNode = lN;
+	}//end of setLeftNode
+	
+	public TreeNode getLeftNode(){
+		return _leftNode;
+	}//end of getLeftNode
+	
+	public void setRightNode(TreeNode rN){
+		_rightNode = rN;
+	}//end of setRightNode
+	
+	public TreeNode getRightNode(){
+		
 	}
 	
 }//end of TreeNode
