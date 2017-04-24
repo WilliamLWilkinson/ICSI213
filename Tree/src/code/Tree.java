@@ -19,6 +19,9 @@ public class Tree {
 		
 	}//end of deleteNode
 	
-	
+	public TreeNode find(){
+		TreeNode temp = new TreeNode();
+		return temp;
+	}//end of find
 
 }
