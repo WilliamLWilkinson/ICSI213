@@ -77,7 +77,7 @@ public class Main {
 		//iterates through the list the number of times the size of the list 
 		for(int i=0; i<sizeOfList;i++){
 			//iterates through the list making comparisons to swap
-			for(int j = 1;j<sizeOfList-1 ;j++){
+			for(int j = 1;j<sizeOfList ;j++){
 				//if the number before is larger than current position swap
 				if(a[j-1]>a[j]){
 					int temp = a[j-1];
