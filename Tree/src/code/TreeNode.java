@@ -37,7 +37,7 @@ public class TreeNode {
 	}//end of setRightNode
 	
 	public TreeNode getRightNode(){
-		
+		return _rightNode;
 	}
 	
 }//end of TreeNode
