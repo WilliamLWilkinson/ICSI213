@@ -39,4 +39,11 @@ public class TreeNode {
 		return _rightNode;
 	}
 	
+	public String getWord(){
+		return _word;
+	}
+	
+	public int getNumRep(){
+		return _numRep;
+	}
 }//end of TreeNode

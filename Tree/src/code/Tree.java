@@ -12,8 +12,16 @@ public class Tree {
 	}//end of print method
 	
 	public void printTree(TreeNode root){
-		
-	}
+		if(root!=null){
+			//get left branches
+			printTree(root.getLeftNode());
+			//print
+			System.out.print("Word: " + root.getWord() + 
+							 ", repeated: " + root.getNumRep() + " ");
+			//get right branches
+			printTree(root.getRightNode());
+		}
+	}//end of printTree
 	
 	public void insert(String s){
 		insert(_root, s);
