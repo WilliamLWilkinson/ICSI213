@@ -8,10 +8,22 @@ public class Tree {
 	}//end of constructor
 	
 	public void printTree(){
-		
+		printTree(_root);
 	}//end of print method
 	
+	public void printTree(TreeNode root){
+		
+	}
+	
+	public void insert(String s){
+		insert(_root, s);
+	}
+	
 	public void insert(TreeNode node, String s){
+		//if the list is empty
+		if(isEmpty()){
+			TreeNode temp = new TreeNode(s);
+		}
 		
 	}//end of insert
 	
