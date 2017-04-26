@@ -39,7 +39,8 @@ public class Tree {
 			else if(node.getWord().compareTo(s)<0){
 				if(node.getRightNode()==null){
 					TreeNode temp = new TreeNode();
-					temp
+					temp.setWord(s);
+					node.setRightNode(temp);
 				}
 				else{
 					insert(node.getRightNode(),s);
@@ -47,7 +48,14 @@ public class Tree {
 				
 			}//end of if
 			else if(node.getWord().compareTo(s)>0){
-				
+				if(node.getLeftNode()==null){
+					TreeNode temp = new TreeNode();
+					temp.setWord(s);
+					node.setLeftNode(temp);
+				}
+				else{
+					insert(node.getLeftNode(),s);
+				}
 			}//end of if else
 			
 		}//end of else
