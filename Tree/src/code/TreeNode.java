@@ -42,6 +42,9 @@ public class TreeNode {
 	public String getWord(){
 		return _word;
 	}
+	public void setWord(String s){
+		_word = s;
+	}
 	
 	public int getNumRep(){
 		return _numRep;

@@ -32,6 +32,25 @@ public class Tree {
 		if(isEmpty()){
 			TreeNode temp = new TreeNode(s);
 		}
+		else{
+			if(node.getWord().compareTo(s)==0){
+				node.incrementNumRep();
+			}
+			else if(node.getWord().compareTo(s)<0){
+				if(node.getRightNode()==null){
+					TreeNode temp = new TreeNode();
+					temp
+				}
+				else{
+					insert(node.getRightNode(),s);
+				}
+				
+			}//end of if
+			else if(node.getWord().compareTo(s)>0){
+				
+			}//end of if else
+			
+		}//end of else
 		
 	}//end of insert
 	
