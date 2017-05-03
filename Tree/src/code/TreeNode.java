@@ -5,6 +5,7 @@ public class TreeNode {
 	private String _word;		//first instance of a word
 	private TreeNode _leftNode;	//pointer to left node 
 	private TreeNode _rightNode;//point to right node
+	private TreeNode _parent;
 
 	//Default constructor 
 	public TreeNode(){
@@ -12,11 +13,13 @@ public class TreeNode {
 		_word = "";			//The first instance of a word, initially set to ""
 		_leftNode = null;	//left node of tree set to null
 		_rightNode = null;	//right node set to null
+		_parent = null;
 	}//end of constructor 
 	
 	//sets the the word and number of times a word is repeated
 	public TreeNode(String s){
 		_word = s;
+		incrementNumRep();
 	}//end of constructor
 	
 	public void incrementNumRep(){
@@ -44,9 +47,18 @@ public class TreeNode {
 	}
 	public void setWord(String s){
 		_word = s;
+		incrementNumRep();
 	}
 	
 	public int getNumRep(){
 		return _numRep;
+	}
+	
+	public TreeNode getParent(){
+		return _parent;
+	}
+	
+	public void setParent(TreeNode p){
+		_parent = p;
 	}
 }//end of TreeNode

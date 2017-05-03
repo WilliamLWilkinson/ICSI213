@@ -16,8 +16,8 @@ public class Tree {
 			//get left branches
 			printTree(root.getLeftNode());
 			//print
-			System.out.print("Word: " + root.getWord() + 
-							 ", repeated: " + root.getNumRep() + " ");
+			System.out.println("Word: " + root.getWord() + 
+							 ", instances: " + root.getNumRep());
 			//get right branches
 			printTree(root.getRightNode());
 		}
@@ -31,6 +31,7 @@ public class Tree {
 		//if the list is empty
 		if(isEmpty()){
 			TreeNode temp = new TreeNode(s);
+			_root = temp;
 		}
 		else{
 			if(node.getWord().compareTo(s)==0){
@@ -66,9 +67,31 @@ public class Tree {
 		
 	}//end of deleteNode
 	
-	public TreeNode find(){
-		TreeNode temp = new TreeNode();
-		return temp;
+	
+	public TreeNode find(String s){
+		TreeNode search = _root;
+		boolean found = false;
+		while(found==false ){
+			if(search.getWord().compareTo(s)==0){
+				
+				found =true;
+			}
+			else if(search.getWord().compareTo(s)<0){
+				search = search.getRightNode();
+				
+			}//end of if
+			else if(search.getWord().compareTo(s)>0){
+				search = search.getLeftNode();
+			}
+			else{
+				found =true;
+			}
+		}//end of while
+		
+		if(search==null){
+			System.out.println();
+		}
+			return search;
 	}//end of find
 	
 	public boolean isEmpty(){
