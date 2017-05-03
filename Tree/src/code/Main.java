@@ -15,9 +15,17 @@ public class Main {
 	       tOne.insert("Nick");
 	       tOne.insert("Nick");
 	       tOne.insert("Nick");
+	       tOne.insert("Tim");
+	       tOne.insert("Jerry");
+	       tOne.insert("Jerry");
+	       tOne.insert("Rodger");
+	       tOne.insert("Nancy");
+	       tOne.insert("Harry");
+
 	       tOne.printTree();
 	       
 	       TreeNode nodeOne = tOne.find("Billy");
+	       System.out.println();
 	       System.out.println("Found node");
 	       System.out.println(nodeOne.getWord());
 	       //TreeNode nodeTwo = tOne.find("Ted");

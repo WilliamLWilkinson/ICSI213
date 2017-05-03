@@ -15,9 +15,11 @@ public class Tree {
 		if(root!=null){
 			//get left branches
 			printTree(root.getLeftNode());
+			
 			//print
 			System.out.println("Word: " + root.getWord() + 
-							 ", instances: " + root.getNumRep());
+							 ", instances: " + root.getNumRep()
+							  + " Parent: " + root.getParent().getWord());
 			//get right branches
 			printTree(root.getRightNode());
 		}
