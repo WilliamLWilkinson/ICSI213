@@ -23,9 +23,9 @@ public class Main {
 	       //TreeNode nodeTwo = tOne.find("Ted");
 	       
 	       //File reading
-	       String filename = "data.txt";
+	       //String filename = "data.txt";
 	       
-	       scanFile(filename);
+	       //scanFile(filename);
 	     
 	       
 	 }//end of main method
@@ -38,6 +38,7 @@ public class Main {
 	         while (scanner.hasNext())
 	         {
 	           //System.out.println(scanner.nextInt());
+	        	 //Break down sentence 
 	         }
 	         scanner.close();
 	       }

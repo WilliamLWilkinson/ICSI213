@@ -24,14 +24,16 @@ public class Tree {
 	}//end of printTree
 	
 	public void insert(String s){
-		insert(_root, s);
+		insert(_root,_root, s);
 	}
 	
-	public void insert(TreeNode node, String s){
+	public void insert(TreeNode p, TreeNode node, String s){
 		//if the list is empty
 		if(isEmpty()){
 			TreeNode temp = new TreeNode(s);
+			temp.setParent(temp);
 			_root = temp;
+			
 		}
 		else{
 			if(node.getWord().compareTo(s)==0){
@@ -41,10 +43,11 @@ public class Tree {
 				if(node.getRightNode()==null){
 					TreeNode temp = new TreeNode();
 					temp.setWord(s);
+					temp.setParent(node);
 					node.setRightNode(temp);
 				}
 				else{
-					insert(node.getRightNode(),s);
+					insert(node, node.getRightNode(),s);
 				}
 				
 			}//end of if
@@ -52,10 +55,11 @@ public class Tree {
 				if(node.getLeftNode()==null){
 					TreeNode temp = new TreeNode();
 					temp.setWord(s);
+					temp.setParent(node);
 					node.setLeftNode(temp);
 				}
 				else{
-					insert(node.getLeftNode(),s);
+					insert(node ,node.getLeftNode(),s);
 				}
 			}//end of if else
 			
@@ -89,7 +93,7 @@ public class Tree {
 		}//end of while
 		
 		if(search==null){
-			System.out.println();
+			System.out.println("Node was not found");
 		}
 			return search;
 	}//end of find
