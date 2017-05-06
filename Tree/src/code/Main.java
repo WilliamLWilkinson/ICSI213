@@ -7,6 +7,7 @@ public class Main {
 	 public static void main(String[] args) {
 		 
 	       Tree tOne = new Tree();
+	       //test insertion
 	       tOne.insert("Billy");
 	       //tOne.printTree();
 	       tOne.insert("Albert");
@@ -20,17 +21,20 @@ public class Main {
 	       tOne.insert("Jerry");
 	       tOne.insert("Rodger");
 	       tOne.insert("Nancy");
-	       tOne.insert("Harry");
-
-	       tOne.printTree();
-	       
+	       //tOne.insert("Harry");
+	       //test print trees
+	       //tOne.printTree();
+	       /*
 	       TreeNode nodeOne = tOne.find("Billy");
 	       System.out.println();
 	       System.out.println("Found node");
 	       System.out.println(nodeOne.getWord());
 	       //TreeNode nodeTwo = tOne.find("Ted");
+	       */
+	       //deletion
+	       //when the node has no children
 	       
-	       //File reading
+	       
 	       //String filename = "data.txt";
 	       
 	       //scanFile(filename);

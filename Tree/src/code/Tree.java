@@ -7,6 +7,10 @@ public class Tree {
 		_root= null;
 	}//end of constructor
 	
+	public TreeNode getRoot(){
+		return _root;
+	}
+	
 	public void printTree(){
 		printTree(_root);
 	}//end of print method
@@ -69,69 +73,8 @@ public class Tree {
 		
 	}//end of insert
 	
-	public void deleteNode(String s){
-		//search for node
-		//if reaches null node means not found
-		//else
-		//check for children
-		//if to see if children are null
-		TreeNode search = _root;
-		boolean found = false;
-		//search for node
-		while(found==false ){
-			//node was found
-			if(search.getWord().compareTo(s)==0){
-				
-				found =true;
-				//if no children set to null
-				if(search.getLeftNode()==null && search.getRightNode()==null){
-					search=null;
-				}
-				//if there is a right child only
-				else if(search.getLeftNode()==null && search.getRightNode()!=null){
-					TreeNode child = search.getRightNode();
-					child.setParent(search.getParent());
-					search=child;
-					
-				}
-				//if there is left child only
-				else if(search.getLeftNode()!=null && search.getRightNode()==null){
-					TreeNode child = search.getLeftNode();
-					//sets parent to parent of search
-					child.setParent(search.getParent());
-					search=child;
-				}
-				//both
-				else{
-				//find smallest value on the right side	
-					TreeNode child = search.getRightNode();
-					
-					while(child.getLeftNode()!=null){
-						child = child.getLeftNode();
-						child.getParent().setLeftNode(null);
-					}
-					child.setLeftNode(search.getLeftNode());
-					child.setRightNode(search.getRightNode());
-					search=child;
-				}
-			}
-			//node was not found, search right 
-			else if(search.getWord().compareTo(s)<0){
-				search = search.getRightNode();
-				
-			}//end of if
-			//node was not found, search left 
-			else if(search.getWord().compareTo(s)>0){
-				search = search.getLeftNode();
-			}
-			else{
-				found =true;
-			}
-		}//end of while
+	public void deleteNode(TreeNode root, String s){
 		
-		if(search==null){
-			System.out.println("Node was not found");
-		}
 		
 	}//end of deleteNode
 	
