@@ -16,6 +16,7 @@ public class TreeNode {
 		_parent = null;
 	}//end of constructor 
 	
+	
 	//sets the the word and number of times a word is repeated
 	public TreeNode(String s){
 		_word = s;
