@@ -73,9 +73,46 @@ public class Tree {
 		
 	}//end of insert
 	
-	public void deleteNode(TreeNode root, String s){
-		
-		
+
+	
+	public void deleteNode(TreeNode node, String s){
+		/*
+		while(node.getLeftNode()!=null||node.getRightNode()!=null){
+			if(node.getWord().compareTo(s)==0){
+				//if the node to be deleted has no children
+				if(node.getLeftNode()==null&&node.getRightNode()==null){
+					node.setNumRep(0);
+					node.setWord(null);
+				}
+				//if the node being deleted has only a left child
+				else if(node.getLeftNode()!=null||node.getRightNode()==null){
+					
+				}
+				//if the node being deleted has only a left child
+				else if(node.getLeftNode()==null||node.getRightNode()!=null){
+					
+				}
+				//if the node being deleted, has too children
+				else{
+					//if the root is being being deleted
+					if(_root.getWord().compareTo(s)==0){
+						
+						
+					}
+				}//else 
+				//found=true;
+			}
+			else if(node.getWord().compareTo(s)<0){
+				//get right
+				deleteNode(node.getLeftNode(),s);
+				
+			}//end of if
+			else if(node.getWord().compareTo(s)>0){
+				//get left
+				deleteNode(node.getLeftNode(),s);
+			}
+		}//end of while
+		*/
 	}//end of deleteNode
 	
 	

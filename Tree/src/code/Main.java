@@ -33,24 +33,34 @@ public class Main {
 	       */
 	       //deletion
 	       //when the node has no children
-	       
-	       
+	       tOne.deleteNode(tOne.getRoot(),"Albert");
+	       //tOne.printTree();
 	       //String filename = "data.txt";
-	       
-	       //scanFile(filename);
-	     
+	       //Tree tTwo = new Tree();
+	       //scanFile(filename, tTwo);
+	       //tTwo.printTree();
 	       
 	 }//end of main method
 	 
-	 public static void scanFile(String s){
+	 public static void scanFile(String s, Tree t){
 		  try
 	       {
 	         Scanner scanner = new Scanner(new FileReader(s));
-
+	         //while there is a line to be scanned
 	         while (scanner.hasNext())
 	         {
 	           //System.out.println(scanner.nextInt());
 	        	 //Break down sentence 
+	        	 String line = scanner.nextLine();
+	        	 //break down line and removes any charachter that isn't a letter
+	        	 String[] arr = line.replaceAll("[^a-zA-Z ]", "").toLowerCase().split("\\s+");    
+
+	        	 for ( String ss : arr) {
+
+	        	      t.insert(ss);
+	        		 //System.out.println(ss);
+	        	  }
+	             
 	         }
 	         scanner.close();
 	       }
