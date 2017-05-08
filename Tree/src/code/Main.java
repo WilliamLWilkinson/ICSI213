@@ -22,22 +22,49 @@ public class Main {
 	       tOne.insert("Jerry");
 	       tOne.insert("Rodger");
 	       tOne.insert("Nancy");
-	       tOne.insert("Harry");
+	       //tOne.insert("Harry");
 	       //test print trees
+	       System.out.println("Example tree:");
 	       tOne.printTree();
 	       //Tests finding
 	       System.out.println();
-	       System.out.println("Finding string billy");
+	       System.out.println("Finding string billy:");
 	       TreeNode nodeOne = tOne.find("Billy");
-	       System.out.println(nodeOne.getWord());
-	       TreeNode nodeTwo = tOne.find("Ted");
+	      // System.out.println(nodeOne.getWord());
+	       TreeNode node =tOne.find("Ted");
+	      if(node==null){
+	    	  System.out.println("not found");
+	      }
+	      System.out.println();
+	      System.out.println("Deletion");
+	      System.out.println("Deleting Albert");
+	      tOne.deleteNode("Albert");
+	      tOne.printTree();
+	      System.out.println("Deleting Jerry");
+	      tOne.deleteNode("Jerry");
+	      tOne.printTree();
+	      System.out.println("Deleting Tim");
+	      tOne.deleteNode("Tim");
+	      tOne.printTree();
+	      System.out.println("Deleting Nick");
+	      tOne.deleteNode("Nick");
+	      tOne.printTree();
+	      System.out.println("Deleting Rodger");
+	      tOne.deleteNode("Rodger");
+	      tOne.printTree();
+	      //tOne.deleteNode("Billy");
+	      tOne.printTree();
+	      System.out.println();
+	      //tOne.insert("Albert");
+	      //tOne.printTree();
 	      
 	       //Testing file reading
 	       System.out.println();
-	       System.out.println("File reading");
+	       //System.out.println("File reading");
 	       String filename = "data.txt";
 	       Tree tThree = new Tree();
 	       scanFile(filename, tThree);
+	       System.out.println("Tree from file:");
 	       tThree.printTree();
 	       
 	 }//end of main method
